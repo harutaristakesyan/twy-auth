@@ -18,8 +18,6 @@ export class FunctionsStack extends Stack {
       '/cognito/user-pool-client-id',
     );
 
-    const authDomain = StringParameter.valueForStringParameter(this, '/cognito/auth-domain');
-
     const authRoutes: LambdaRouteDefinition[] = [
       {
         functionPath: 'signUp',
@@ -67,10 +65,9 @@ export class FunctionsStack extends Stack {
         functionPath: 'refreshToken',
         routeKey: 'POST /api/refresh-token',
         env: {
-          AUTH_DOMAIN: authDomain,
           USER_POOL_CLIENT_ID: userPoolClientId,
         },
-      }
+      },
     ];
 
     new HttpLambdaRouter(this, 'AuthRouter', { envName, routes: authRoutes });

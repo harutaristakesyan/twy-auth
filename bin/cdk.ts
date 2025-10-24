@@ -9,7 +9,7 @@ import {
 } from 'aws-cdk-lib/aws-apigatewayv2';
 import { NodejsFunction, NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
-import {Architecture, Runtime} from 'aws-cdk-lib/aws-lambda';
+import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { LogGroup, RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { HttpMethod } from 'aws-cdk-lib/aws-events';
 import { HttpLambdaIntegration } from 'aws-cdk-lib/aws-apigatewayv2-integrations';
