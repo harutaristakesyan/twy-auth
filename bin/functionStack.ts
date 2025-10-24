@@ -70,31 +70,7 @@ export class FunctionsStack extends Stack {
           AUTH_DOMAIN: authDomain,
           USER_POOL_CLIENT_ID: userPoolClientId,
         },
-      },
-      {
-        functionPath: 'callback',
-        routeKey: 'GET /api/callback',
-        env: {
-          AUTH_DOMAIN: authDomain,
-          USER_POOL_CLIENT_ID: userPoolClientId,
-        },
-      },
-      {
-        functionPath: 'logout',
-        routeKey: 'GET /api/logout',
-        env: {
-          AUTH_DOMAIN: authDomain,
-          USER_POOL_CLIENT_ID: userPoolClientId,
-        },
-      },
-      {
-        functionPath: 'generateAuthUrl',
-        routeKey: 'POST /api/generate-url',
-        env: {
-          AUTH_DOMAIN: authDomain,
-          USER_POOL_CLIENT_ID: userPoolClientId,
-        },
-      },
+      }
     ];
 
     new HttpLambdaRouter(this, 'AuthRouter', { envName, routes: authRoutes });
